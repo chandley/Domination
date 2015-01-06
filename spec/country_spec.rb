@@ -1,4 +1,6 @@
-describe 'country' do 
+require 'country'
+
+describe 'country' do
   context 'shows on map with armies' do
     it 'should have a name' do
 
