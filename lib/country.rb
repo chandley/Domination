@@ -1,10 +1,12 @@
 class Country
 
+  attr_reader :name
+
   def initialize(name)
     @name = name
   end
 
-  def name
-    @name
+  def armies
+    []
   end
 end
