@@ -1,9 +1,10 @@
-Given(/^I have just started the game$/) do
-  
+When(/^I click on start game button$/) do
+  click_button "Start game"
 end
 
-Then(/^I can see some countries$/) do
+Then(/^I should see several countries$/) do
   ['United Kingdom','Iceland','Scandinavia'].each do |country|
     expect(page).to have_content(country)
   end
 end
+
