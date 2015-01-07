@@ -16,7 +16,7 @@ describe 'country' do
 
     it 'should be able to contain an army' do
       belgium.add_army(army)
-      expect(belgium.armies).to contain(army)
+      expect(belgium.armies).to include(army)
     end
   end
 end
