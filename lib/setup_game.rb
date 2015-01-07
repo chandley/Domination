@@ -1,5 +1,6 @@
 require_relative "./player.rb"
 require_relative "./country.rb"
+require_relative "./country_code_lookup.rb"
 
 class MockGame
 
