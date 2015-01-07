@@ -15,4 +15,6 @@ class Country
   	@armies -= 1
   end
 
+  
+
 end
