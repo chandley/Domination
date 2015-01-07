@@ -22,6 +22,10 @@ class Player
     @sample_country = @countries.sample
   end
 
+  def delete_army
+    @total_armies -= 1
+  end
+
 
 end
 

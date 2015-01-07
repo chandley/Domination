@@ -3,7 +3,6 @@ require "player"
 describe Player do
 
   let (:player) { Player.new("UK", "France", "Germany") }
-  let (:france) {double :country}
 
   it "should have countries when initialized" do
     expect(player.countries).to eq ["UK", "France", "Germany"]
@@ -15,6 +14,11 @@ describe Player do
 
   it "should select a country at random" do
     expect(player.sample_country).to eq 'UK'
+  end
+
+  it "should remove an army from Player" do
+    player.army_count
+    expect(player.delete_army).to eq 8
   end
 
 end
