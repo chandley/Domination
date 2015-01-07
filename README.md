@@ -2,14 +2,18 @@
 
 ##MVP - RISK
 
+[![Code Climate](https://codeclimate.com/github/chandley/Domination/badges/gpa.svg)](https://codeclimate.com/github/chandley/Domination)
+
+[![Test Coverage](https://codeclimate.com/github/chandley/Domination/badges/coverage.svg)](https://codeclimate.com/github/chandley/Domination)
+
 Strategy based game around concurring islands
 
 ###Classes
-Countries
-Player
-Dice
-Army
-Game
+- Countries
+- Player
+- Dice
+- Army
+- Game
 
 ####Countries
 - Should hold armies
