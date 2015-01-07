@@ -2,7 +2,8 @@ require 'sinatra/base'
 
 class Domination < Sinatra::Base
   get '/' do
-    'United Kingdom Iceland Scandinavia'
+    erb :game
+
   end
 
   # start the server if ruby file executed directly
