@@ -18,7 +18,7 @@ class Player
     @total_armies = DEFAULT_ARMY_NUMBER * countries.count 
   end
 
-  def sample_countries
+  def sample_country
     @sample_country = @countries.sample
   end
 
