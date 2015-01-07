@@ -10,11 +10,11 @@
 Strategy based game around conquering countries for week 9 makeathon at Makers Academy 
 
 ##Classes
-- Countries
-- Player
-- Dice
-- Army
-- Game
+1. Countries
+2. Player
+3. Dice
+4. Army
+5. Game
 
 ###Countries
 - Should hold armies
