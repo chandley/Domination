@@ -1,17 +1,21 @@
+require 'army_module'
+
 class Player
+
+  include Army
 
   DEFAULT_ARMY_NUMBER = 3
 
-  attr_accessor :countries, :army, :sample_country
+  attr_accessor :countries, :total_armies, :sample_country
 
   def initialize(*country)
-    @army 
+    @total_armies 
     @countries = []
     country.each { |country| @countries << country }
   end
 
   def army_count
-    @army = DEFAULT_ARMY_NUMBER * countries.count 
+    @total_armies = DEFAULT_ARMY_NUMBER * countries.count 
   end
 
   def sample_countries
