@@ -1,6 +1,4 @@
-#Mini makeathon
-
-##MVP - RISK
+#MVP - RISK
 
 [![Code Climate](https://codeclimate.com/github/chandley/Domination/badges/gpa.svg)](https://codeclimate.com/github/chandley/Domination)    [![Test Coverage](https://codeclimate.com/github/chandley/Domination/badges/coverage.svg)](https://codeclimate.com/github/chandley/Domination)
 
@@ -11,38 +9,38 @@
 
 Strategy based game around concurring islands
 
-###Classes
+##Classes
 - Countries
 - Player
 - Dice
 - Army
 - Game
 
-####Countries
+###Countries
 - Should hold armies
 - Can lose armies
 - Can gain armies
 - Should know what countries they are connected to
 - Belongs to a player 
 
-####Player
+###Player
 - Controls Armies
 - Starts with 20 armies each
 - Can instruct armies to invade countries
 - Can finish turn
 - Getes extra armies, one for each army they control
 
-####Dice
+###Dice
 - Randomly selects number between 1 and 6
 - One dice per army
 
-####Army
+###Army
 - Can beat another army
 - Can lose to another army
 - Only invade country when more then 1 army in the country
 - Belongs to a player
 
-####Game
+###Game
 - Winning army scores higher number on dice role
 - Winner is player who controls all countries
 - Player looses when he controls no countries
