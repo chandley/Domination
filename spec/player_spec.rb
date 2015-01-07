@@ -21,4 +21,9 @@ describe Player do
     expect(player.delete_army).to eq 8
   end
 
+  it "should start new round with new armies" do
+    expect(player.new_round).to eq 3
+  end
+
+
 end

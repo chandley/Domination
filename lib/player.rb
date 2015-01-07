@@ -1,10 +1,8 @@
-require 'army_module'
-
 class Player
 
-  include Army
 
   DEFAULT_ARMY_NUMBER = 3
+  NEW_COUNTRY_NUMBER = 1
 
   attr_accessor :countries, :total_armies, :sample_country
 
@@ -18,6 +16,10 @@ class Player
     @total_armies = DEFAULT_ARMY_NUMBER * countries.count 
   end
 
+  def new_round
+    @total_armies = NEW_COUNTRY_NUMBER * countries.count 
+  end
+
   def sample_country
     @sample_country = @countries.sample
   end
@@ -28,19 +30,3 @@ class Player
 
 
 end
-
-  # def add_to_suffle_countries
-  #   @sample_country.add_army
-  # end
-
-  # def army_country_count
-    
-  # end
-
-  # def add_army(sample_country)
-  #   add_army(sample_country)
-  # end
-
-  # def remove_army
-  #   @army -= 1
-  # end
