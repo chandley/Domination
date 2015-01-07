@@ -7,7 +7,7 @@
 <img src=https://img.shields.io/badge/CSS-Style-yellow.svg>
 </div>
 
-Strategy based game around concurring islands
+Strategy based game around conquering countries for week 9 makeathon at Makers Academy 
 
 ##Classes
 - Countries
