@@ -7,7 +7,7 @@ Feature: In order to play the game
   When I click on start game button 
   Then I should see several countries
 
-  # Scenario: As a new player
-  # When the game is setup
-  # Then I should see some armies
-  # 
+    Scenario: As a new player
+  When the game is setup
+  Then I should see some armies
+  
