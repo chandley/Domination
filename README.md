@@ -45,3 +45,9 @@ Strategy based game around conquering countries for week 9 makeathon at Makers A
 - Winner is player who controls all countries
 - Player looses when he controls no countries
 - Game played till one player left, they are crowned the winner. 
+
+##Team Members
+- Chris Hadley
+- Simon Lange
+- Pavel Redics
+- Shan Hasan
