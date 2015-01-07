@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Domination < Sinatra::Base
   get '/' do
-    'United Kingdom Iceland Scandinavia'
+    'United Kingdom : 1 Iceland Scandinavia'
   end
 
   # start the server if ruby file executed directly
