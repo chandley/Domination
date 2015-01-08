@@ -8,8 +8,16 @@
   <div id="map" style="width: 100%; height: 100%"></div>
   <script>
     $(function(){
-      $('#map').vectorMap({map: 'europe_mill_en'});
-  });
+      $('#map').vectorMap({
+        map: 'europe_mill_en',
+        onRegionTipShow: function(e, el, code){
+          el.html(el.html()+' (Armies - '+1+')');
+
+        }
+      
+    })
+    
+    });
   </script>
 
 
