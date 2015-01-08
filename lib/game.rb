@@ -32,14 +32,14 @@ class Game
     player1.countries.each do |country| 
       country_hash = {}
       country_hash[:country] = COUNTRY_CODE_HASH[country.name]
-      country_hash[:colour] = 'red'
+      country_hash[:color] = 'red'
       countries_array << country_hash
     end
 
     player2.countries.each do |country| 
       country_hash = {}
       country_hash[:country] = COUNTRY_CODE_HASH[country.name]
-      country_hash[:colour] = 'blue'
+      country_hash[:color] = 'blue'
       countries_array << country_hash
     end
 

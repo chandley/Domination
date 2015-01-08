@@ -32,7 +32,7 @@
 <script>
 
   $(document).ready(function(){
-    $.getJSON('http://localhost:9292/country_data', function(data) {
+    $.getJSON('http://localhost:9292/game_data', function(data) {
       data.countries.forEach(function(state) {
         $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
       });
