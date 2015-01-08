@@ -19,8 +19,6 @@ class Game
     opponent.remove_army(country)
   end
 
-  # def army_battl
-
   def turn 
     @turn ||= player1
   end

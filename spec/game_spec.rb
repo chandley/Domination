@@ -52,7 +52,8 @@ describe Game do
     end
 
 	  	it "should be able to invade a country" do
-        # allow(brazil).to receive(:attack?).and_return true
+
+        
         expect(player2).to receive(:remove_army).with(:brazil)
         game.invaded(:brazil)
 	  	end
