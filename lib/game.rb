@@ -1,9 +1,12 @@
 class Game
 
-# attr_reader :countries
+  attr_accessor :player1, :player2
 
-  def assign_armies
-    @total_armies -= countries_count
+  def initialize
+    player1, player2 = nil, nil
   end
 
+  def add_player(player)
+    self.player1 = player
+  end
 end
