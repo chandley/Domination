@@ -77,11 +77,20 @@ describe Game do
 	  	end
 
       it "attacking country takes over country with single defending army" do        
-        allow(brazil).to receive(:remove_army)
+        allow(belgium).to receive(:remove_army)
         expect(player1).to receive(:country_input)
         expect(player2).to receive(:remove_country)
         test_attack
       end
+
+      it "attacking country loses an army when taking over another country" do        
+        allow(player1).to receive(:country_input)
+        allow(player2).to receive(:remove_country)
+        expect(belgium).to receive(:remove_army)
+        test_attack
+      end
+
+
 
   end
 end

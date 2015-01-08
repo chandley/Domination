@@ -27,7 +27,7 @@ class Game
     if battle_setup_hash[:defending_country].armies == 1
       battle_setup_hash[:attacking_player].country_input(battle_setup_hash[:defending_country])
       battle_setup_hash[:defending_player].remove_country(battle_setup_hash[:defending_country])
-      # battle_setup_hash[:attacking_country].remove_army
+      battle_setup_hash[:attacking_country].remove_army
     else
       battle_setup_hash[:defending_country].remove_army
     end
