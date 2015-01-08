@@ -7,13 +7,13 @@ class Game
   end
 
   def add_player(player)
-    self.player1 ? self.player2 = player : self.player1 = player unless has_to_players
+    self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
   end
 
   private
 
-  def has_to_players
-  	!self.player2 = nil
+  def has_two_players?
+    !player2.nil?
   end
 
 
