@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 group :development, :test do
   gem 'capybara'
@@ -9,4 +10,5 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec'
   gem 'shotgun'
+
 end

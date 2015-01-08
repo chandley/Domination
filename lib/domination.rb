@@ -1,8 +1,28 @@
 require 'sinatra/base'
+require 'sinatra/json'
+require 'json'
+
+require_relative "./setup_game.rb"
+
+require_relative "./country_code_lookup"
 
 class Domination < Sinatra::Base
+  helpers Sinatra::JSON
+
+
+  set :public_folder, File.join(root, "..", "public") 
+
   get '/' do
-    'United Kingdom Iceland Scandinavia'
+    erb :game
+  end
+
+  get '/map' do
+    erb :map
+  end
+
+  get '/country_data' do
+    content_type :json
+    COUNTRIES.to_json
   end
 
   # start the server if ruby file executed directly

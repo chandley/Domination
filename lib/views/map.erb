@@ -1,0 +1,44 @@
+<head>
+  <link rel="stylesheet" href="/css/jquery-jvectormap-2.0.1.css" type="text/css" media="screen"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-jvectormap-2.0.1.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-jvectormap-europe-mill-en.js"></script>
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 100%"></div>
+  <script>
+    $(function(){
+      $('#map').vectorMap({
+        map: 'europe_mill_en',
+        onRegionTipShow: function(e, el, code){
+          el.html(el.html()+' (Armies - '+1+')');
+
+        }
+      
+    })
+    
+    });
+  </script>
+
+
+
+<!-- $(document).ready(function(){
+  $.get('https://api.github.com/users/tansaku',function(user){
+    var newProfile = Mustache.render($('#profile-template').html(), user);
+    $('.profile-container').append(newProfile);
+  })
+}); -->
+
+<script>
+
+  $(document).ready(function(){
+    $.getJSON('http://localhost:9292/country_data', function(data) {
+      data.countries.forEach(function(state) {
+        $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
+      });
+    });
+  });
+
+</script>
+
+</body>
