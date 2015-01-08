@@ -24,6 +24,12 @@ class Game
     player1.country_input(uk)
     sweden = Country.new('Sweden')
     player2.country_input(sweden)
+    russia = Country.new('Russia')
+    player2.country_input(russia)
+    finland = Country.new('Finland')
+    player1.country_input(finland)
+    hungary = Country.new('Hungary')
+    player1.country_input(hungary)
   end
 
   def show_countries

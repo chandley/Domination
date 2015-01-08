@@ -4,7 +4,15 @@ COUNTRY_CODE_HASH = {
 'United Kingdom' => 'GB',
 'Sweden' => 'SE',
 'Germany' => 'DE',
-'Hungary' => 'HU'
+'Hungary' => 'HU',
+'Bulgaria' => 'BG',
+'Denmark' => 'DK',
+'Jordan' => 'JO',
+'Finland' => 'FI',
+'Palestine' => 'PS',
+"Russia" => 'RU',
+"Ukraine" => 'UA'
+
 }
 
 COUNTRIES = {
