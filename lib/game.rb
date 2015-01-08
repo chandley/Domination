@@ -16,7 +16,7 @@ class Game
   end
 
   def attack(country)
-    opponent.receive_attack(country)
+    opponent.go_invade(country)
   end
 
   # def army_battl
