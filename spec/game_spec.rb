@@ -48,8 +48,6 @@ describe Game do
 
   context "Attacking" do
 
-
-
   	before do
   		game.add_player(player1)
     	game.add_player(player2)
@@ -88,6 +86,11 @@ describe Game do
         allow(player2).to receive(:remove_country)
         expect(belgium).to receive(:remove_army)
         test_attack
+      end
+
+      it "can switch turns" do 
+        game.send(:switch_turns)
+        expect(game.send(:turn)).to eq player2
       end
 
 

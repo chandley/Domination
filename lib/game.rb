@@ -41,5 +41,9 @@ class Game
     !player2.nil?
   end
 
+  def switch_turns
+    turn == player1 ? self.turn = player2 : self.turn = player1
+  end
+
 
 end
