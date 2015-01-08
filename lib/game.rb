@@ -23,6 +23,10 @@ class Game
     @turn ||= player1
   end
 
+  def attack(battle_setup_hash)
+    battle_setup_hash[:defending_country].remove_army
+  end
+
   alias :current_player :turn
 
   private

@@ -6,7 +6,7 @@ describe Game do
   let (:player1) {double :player, countries: belgium}
   let (:player2) {double :player, countries: brazil}
   let (:belgium) {double :country, armies: 3}
-  let (:brazil) {double :country, armies: 2, attacked?: true}
+  let (:brazil) {double :country, armies: 1, attacked?: true}
  
   context "The basics" do
 
@@ -46,27 +46,34 @@ describe Game do
 
   context "Attacking" do
 
+
+
   	before do
   		game.add_player(player1)
     	game.add_player(player2)
+    end
+
+    def test_attack
+      game.attack({:attacking_player => player1, 
+                   :defending_player => player2,
+                   :attacking_country => belgium,
+                   :defending_country => brazil
+                   })
     end
 
       it "should generate error if attacker only has one army" do
 
       end
 
-	  	it "attacking country with more armies removes army from defender" do
-        attack({:attacking_player => player1, 
-                :defending_player => player2,
-                :attacking_country => belgium,
-                :defending_country => brazil
-                })
-       
-        expect(brazil).to have_recieved(:remove_army)       
+	  	it "attacking country with more armies then defending country removes one army from defender" do
+        expect(brazil).to receive(:remove_army)
+        test_attack
 	  	end
 
-      it "attacking country takes over country with single defending army" do
-
+      it "attacking country takes over country with single defending army" do        
+        allow(brazil).to receive(:remove_army)
+        expect(player1).to receive(:country_input)
+        test_attack
       end
 
   end
