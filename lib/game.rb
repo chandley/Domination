@@ -1,6 +1,7 @@
 class Game
 
   attr_accessor :player1, :player2
+  attr_writer :turn
 
   def initialize
     player1, player2 = nil, nil
@@ -16,6 +17,8 @@ class Game
     !player2.nil?
   end
 
-
+  def turn 
+    @turn ||= player1
+  end
 
 end
