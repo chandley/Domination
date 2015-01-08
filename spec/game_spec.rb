@@ -19,9 +19,5 @@ describe Game do
     	expect(game.player2).to eq player2
     end
 
-    it "can only have a second player if first player got added" do
-    	expect{game.add_player(player2)}.to raise_error("Add the first player first")
-    end
-
   end
 end

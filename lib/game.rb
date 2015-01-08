@@ -13,7 +13,7 @@ class Game
   private
 
   def has_to_players
-  	!self.player2 = nil
+  	!player2.nil?
   end
 
 
