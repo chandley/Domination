@@ -35,6 +35,10 @@
     $.getJSON('http://localhost:9292/country_data', function(data) {
       data.countries.forEach(function(state) {
         $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
+        $('svg path[data-code="' + state.country + '"]').hover(function() {
+          $(this).css('opacity', '0.5')}, function() {
+            $(this).css('opacity', '1')
+          });
       });
     });
   });
