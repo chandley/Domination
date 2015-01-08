@@ -11,16 +11,21 @@ class Game
     self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
   end
 
-  def attack(country)
-  	country.remove_army
+  def opponent 
+    current_player == player1 ? player2 : player1
   end
 
+  def attack(country)
+    opponent.receive_attack(country)
+  end
 
+  # def army_battl
 
+  def turn 
+    @turn ||= player1
+  end
 
-
-
-
+  alias :current_player :turn
 
   private
 
@@ -28,8 +33,5 @@ class Game
     !player2.nil?
   end
 
-  def turn 
-    @turn ||= player1
-  end
 
 end

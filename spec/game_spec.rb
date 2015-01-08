@@ -6,7 +6,7 @@ describe Game do
   let (:player1) {double :player, countries: belgium}
   let (:player2) {double :player, countries: brazil}
   let (:belgium) {double :country, armies: 3}
-  let (:brazil) {double :country, armies: 2}
+  let (:brazil) {double :country, armies: 2, attacked?: true}
  
   context "The basics" do
 
@@ -52,8 +52,17 @@ describe Game do
     end
 
 	  	it "should be able to attack a country" do
-
-	  		expect(game.attack(player1)).to eq 2
+        allow(brazil).to receive(:attack?).and_return true
+        expect(player2).to receive(:receive_attack).with(:brazil)
+        game.attack(:brazil)
 	  	end
   	end
 end
+
+
+
+
+
+
+
+
