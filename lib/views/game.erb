@@ -1,0 +1,23 @@
+<html>
+
+<body>
+
+  <button type="button">Start game</button>
+
+
+
+  <% game = MockGame.new %>
+  player1
+  <% game.player1.countries.each do |country| %>
+    <%= country.name %>
+    <%= country.armies %>
+  <% end %>
+  player2
+  <% game.player2.countries.each do |country| %>
+    <%= country.name %>
+    <%= country.armies %>
+  <% end %>
+
+</body>
+
+</html>
