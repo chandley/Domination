@@ -13,15 +13,25 @@
   </script>
 
 
+<% country_code = "GB" %>
 
 
+
+<!-- $(document).ready(function(){
+  $.get('https://api.github.com/users/tansaku',function(user){
+    var newProfile = Mustache.render($('#profile-template').html(), user);
+    $('.profile-container').append(newProfile);
+  })
+}); -->
 
 <script>
-$(function(){
-$('#map').vectorMap({map: 'europe_mill_en'});
- $('svg path[data-code="GB"]').attr('fill','red')
- });
- </script>
+$(document).ready(function(){
+  $.getJSON('http://localhost:9292/country_data', function(country) {
+    $('svg path[data-code="' + country.name + '"]').attr('fill','red')
+  });
+});
+
+</script>
 
 <script>
 $(function(){

@@ -1,8 +1,10 @@
 require 'sinatra/base'
+require 'sinatra/json'
 
 require_relative "./setup_game.rb"
 
 class Domination < Sinatra::Base
+  helpers Sinatra::JSON
 
   set :public_folder, File.join(root, "..", "public") 
 
@@ -12,6 +14,10 @@ class Domination < Sinatra::Base
 
   get '/map' do
     erb :map
+  end
+
+  get '/country_data' do
+    json :name => 'GB'
   end
 
   # start the server if ruby file executed directly
