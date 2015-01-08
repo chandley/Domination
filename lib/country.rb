@@ -25,4 +25,8 @@ class Country
     army_count
   end
 
+  def attacked!
+    true
+  end
+
 end

@@ -29,5 +29,9 @@ describe 'country' do
       expect{belgium.armies?}.to raise_error("Game error: There are no armies on this country")
     end   
 
+    # it "can be attacked" do
+    #   expect(country.attacked!).to be true
+    # end
+
   end
 end

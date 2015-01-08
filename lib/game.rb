@@ -15,8 +15,8 @@ class Game
     current_player == player1 ? player2 : player1
   end
 
-  def attack(country)
-    opponent.go_invade(country)
+  def invaded(country)
+    opponent.remove_army(country)
   end
 
   # def army_battl

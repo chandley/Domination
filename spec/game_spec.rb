@@ -51,10 +51,10 @@ describe Game do
     	game.add_player(player2)
     end
 
-	  	it "should be able to attack a country" do
+	  	it "should be able to invade a country" do
         # allow(brazil).to receive(:attack?).and_return true
-        expect(player2).to receive(:go_invade).with(:brazil)
-        game.attack(:brazil)
+        expect(player2).to receive(:remove_army).with(:brazil)
+        game.invaded(:brazil)
 	  	end
   	end
 end
