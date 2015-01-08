@@ -13,9 +13,6 @@
   </script>
 
 
-<% country_code = "GB" %>
-
-
 
 <!-- $(document).ready(function(){
   $.get('https://api.github.com/users/tansaku',function(user){
@@ -25,27 +22,15 @@
 }); -->
 
 <script>
-$(document).ready(function(){
-  $.getJSON('http://localhost:9292/country_data', function(country) {
-    $('svg path[data-code="' + country.name + '"]').attr('fill','red')
+
+  $(document).ready(function(){
+    $.getJSON('http://localhost:9292/country_data', function(data) {
+      data.countries.forEach(function(state) {
+        $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
+      });
+    });
   });
-});
 
 </script>
-
-<script>
-$(function(){
-$('#map').vectorMap({map: 'europe_mill_en'});
- $('svg path[data-code="FR"]').attr('fill','blue')
- });
- </script>
-
- <script>
-$(function(){
-$('#map').vectorMap({map: 'europe_mill_en'});
- $('svg path[data-code="SE"]').attr('fill','blue')
- });
- </script>
-
 
 </body>
