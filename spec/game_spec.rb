@@ -3,8 +3,10 @@ require 'game.rb'
 describe Game do
 
   let (:game) {Game.new}
-  let (:player1) {double :player}
-  let (:player2) {double :player}
+  let (:player1) {double :player, countries: belgium}
+  let (:player2) {double :player, countries: brazil}
+  let (:belgium) {double :country, armies: 3}
+  let (:brazil) {double :country, armies: 2}
  
   context "The basics" do
 
@@ -35,5 +37,23 @@ describe Game do
       expect(game.send(:turn)).to eq(player1)
     end
 
+    it "player has a country and the country has an army" do
+    	expect(player1.countries).to eq belgium
+    	expect(player1.countries.armies).to eq 3
+    end
+
   end
+
+  context "The logic" do
+
+  	before do
+  		game.add_player(player1)
+    	game.add_player(player2)
+    end
+
+	  	it "should be able to attack a country" do
+
+	  		expect(game.attack(player1)).to eq 2
+	  	end
+  	end
 end

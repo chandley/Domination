@@ -11,6 +11,17 @@ class Game
     self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
   end
 
+  def attack(country)
+  	country.remove_army
+  end
+
+
+
+
+
+
+
+
   private
 
   def has_two_players?
