@@ -15,14 +15,22 @@ class Game
     current_player == player1 ? player2 : player1
   end
 
-  def attack(country)
-    opponent.go_invade(country)
+  def invaded(country)
+    opponent.remove_army(country)
   end
-
-  # def army_battl
 
   def turn 
     @turn ||= player1
+  end
+
+  def attack(battle_setup_hash)
+    if battle_setup_hash[:defending_country].armies == 1
+      battle_setup_hash[:attacking_player].country_input(battle_setup_hash[:defending_country])
+      battle_setup_hash[:defending_player].remove_country(battle_setup_hash[:defending_country])
+      battle_setup_hash[:attacking_country].remove_army
+    else
+      battle_setup_hash[:defending_country].remove_army
+    end
   end
 
   alias :current_player :turn
@@ -31,6 +39,10 @@ class Game
 
   def has_two_players?
     !player2.nil?
+  end
+
+  def switch_turns
+    turn == player1 ? self.turn = player2 : self.turn = player1
   end
 
 

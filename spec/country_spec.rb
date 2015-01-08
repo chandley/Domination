@@ -4,6 +4,7 @@ describe 'country' do
   context 'shows on map with armies' do
 
     let(:belgium)  {Country.new("Belgium")}
+    # let(:player1) {double :player}
 
     it 'should have a name' do
       expect(belgium.name).to eq('Belgium')
@@ -25,9 +26,10 @@ describe 'country' do
     end
 
     it 'should never have less then 1 army' do
-      belgium.remove_army
-      expect{belgium.armies?}.to raise_error("Game error: There are no armies on this country")
+      expect{belgium.remove_army}.to raise_error("Game error: There are no armies on this country")
     end   
 
   end
 end
+
+
