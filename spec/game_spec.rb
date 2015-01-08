@@ -44,20 +44,32 @@ describe Game do
 
   end
 
-  context "The logic" do
+  context "Attacking" do
 
   	before do
   		game.add_player(player1)
     	game.add_player(player2)
     end
 
-	  	it "should be able to invade a country" do
+      it "should generate error if attacker only has one army" do
 
-        
-        expect(player2).to receive(:remove_army).with(:brazil)
-        game.invaded(:brazil)
+      end
+
+	  	it "attacking country with more armies removes army from defender" do
+        attack({:attacking_player => player1, 
+                :defending_player => player2,
+                :attacking_country => belgium,
+                :defending_country => brazil
+                })
+       
+        expect(brazil).to have_recieved(:remove_army)       
 	  	end
-  	end
+
+      it "attacking country takes over country with single defending army" do
+
+      end
+
+  end
 end
 
 
