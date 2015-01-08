@@ -1,11 +1,50 @@
 class Game
 
+  require_relative "./player.rb"
+  require_relative "./country.rb"
+  require_relative "./country_code_lookup.rb"
+
+
   attr_accessor :player1, :player2
   attr_writer :turn
 
   def initialize
     player1, player2 = nil, nil
+    setup_game
   end
+
+  def setup_game
+    simon = Player.new
+    simon.name = 'Simon'
+    pavel = Player.new
+    pavel.name = 'Pavel'
+    add_player(simon)
+    add_player(pavel)
+    uk = Country.new('United Kingdom')
+    player1.country_input(uk)
+    sweden = Country.new('Sweden')
+    player2.country_input(sweden)
+  end
+
+  def show_countries
+
+    countries_array = []
+    player1.countries.each do |country| 
+      country_hash = {}
+      country_hash[:country] = COUNTRY_CODE_HASH[country.name]
+      country_hash[:colour] = 'red'
+      countries_array << country_hash
+    end
+
+    player2.countries.each do |country| 
+      country_hash = {}
+      country_hash[:country] = COUNTRY_CODE_HASH[country.name]
+      country_hash[:colour] = 'blue'
+      countries_array << country_hash
+    end
+
+    return {:countries => countries_array}
+  end 
 
   def add_player(player)
     self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
@@ -44,6 +83,5 @@ class Game
   def switch_turns
     turn == player1 ? self.turn = player2 : self.turn = player1
   end
-
 
 end

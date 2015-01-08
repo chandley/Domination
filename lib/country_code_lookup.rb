@@ -1,4 +1,4 @@
-country_code_hash = {
+COUNTRY_CODE_HASH = {
 'Belgium' => 'BE',
 'France' => 'FR',
 'United Kingdom' => 'GB',
