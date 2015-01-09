@@ -4,7 +4,7 @@ class Game
   require_relative "./country_code_lookup.rb"
 
   attr_accessor :player1, :player2
-  attr_writer :turn
+  # attr_writer :turn
 
   def initialize
     player1, player2 = nil, nil
@@ -21,14 +21,11 @@ class Game
   end
 
   def show_countries
-
     countries_array = []
     countries_array = show_player_countries(player1, 'red', countries_array)
     countries_array = show_player_countries(player2, 'blue', countries_array)
-
     return {:countries => countries_array}
   end 
-
 
   def assign_countries
     players = [player1, player2]
@@ -42,18 +39,6 @@ class Game
     self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
   end
 
-  def opponent 
-    current_player == player1 ? player2 : player1
-  end
-
-  def invaded(country)
-    opponent.remove_army(country)
-  end
-
-  def turn 
-    @turn ||= player1
-  end
-
   def attack(battle_setup_hash)
     if battle_setup_hash[:defending_country].armies == 1
       battle_setup_hash[:attacking_player].country_input(battle_setup_hash[:defending_country])
@@ -64,16 +49,29 @@ class Game
     end
   end
 
-  alias :current_player :turn
-
   private
 
   def has_two_players?
     !player2.nil?
   end
-
-  def switch_turns
-    turn == player1 ? self.turn = player2 : self.turn = player1
-  end
-
+  
 end
+  # def opponent 
+  #   current_player == player1 ? player2 : player1
+  # end
+
+  # def invaded(country)
+  #   opponent.remove_army(country)
+  # end
+
+  # def turn 
+  #   @turn ||= player1
+  # end
+
+
+  # alias :current_player :turn
+
+
+  # def switch_turns
+  #   turn == player1 ? self.turn = player2 : self.turn = player1
+  # end

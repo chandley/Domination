@@ -34,7 +34,7 @@ describe Game do
       expect(game.send(:has_two_players?)).to eq false
     end
 
-    it "knows who's turn it is" do
+    xit "knows who's turn it is" do
       game.add_player(player1)
       expect(game.send(:turn)).to eq(player1)
     end
@@ -88,7 +88,7 @@ describe Game do
         test_attack
       end
 
-      it "can switch turns" do 
+      xit "can switch turns" do 
         game.send(:switch_turns)
         expect(game.send(:turn)).to eq player2
       end

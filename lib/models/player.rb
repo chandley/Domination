@@ -12,14 +12,6 @@ class Player
     # country.each { |country| @countries << country }
   end
 
-  # def country_initial_assign
-  #   if @countries.count < 21
-  #     @countries << country
-  #   else
-  #     @countries
-  #   end
-  # end
-
   def country_input(country)
     @countries << country
   end
@@ -27,6 +19,16 @@ class Player
   def remove_country(country)
     @countries.delete(country)
   end
+
+end
+
+  # def country_initial_assign
+  #   if @countries.count < 21
+  #     @countries << country
+  #   else
+  #     @countries
+  #   end
+  # end
 
   # def start_number_of_armies
   #   @unassigned_armies = DEFAULT_ARMY_NUMBER * countries_count 
@@ -48,4 +50,3 @@ class Player
   #   countries.count
   # end
 
-end

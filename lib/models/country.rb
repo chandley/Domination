@@ -1,6 +1,5 @@
 class Country
 
-
   attr_reader :name, :armies
 
   def initialize(name)
