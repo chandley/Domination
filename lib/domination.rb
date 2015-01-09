@@ -26,7 +26,7 @@ class Domination < Sinatra::Base
   use Rack::Flash
 
   set :public_folder, File.join(root, "..", "..", "public") 
-  set :views, Proc.new{File.join(root, "..", "views")} 
+  set :views, File.join(root, "..", "views")
 
 
   # get '/attack' do
