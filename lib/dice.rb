@@ -1,32 +1,63 @@
-RAW_COUNTRIES = [{country: "GB", color: nil}, 
-             {country: "FR", color: nil},
-             {country: "UA", color: nil},
-             {country: "RU", color: nil},
-             {country: "BE", color: nil},
-             {country: "ES", color: nil},
-             {country: "DE", color: nil},
-             {country: "SE", color: nil},
-             {country: "IT", color: nil},
-             {country: "CH", color: nil}]
+class Assign_Country
 
-COUNTRIES = { countries: []}
+  COUNTRY_CODE_HASH = {
+    'Belgium' => 'BE',
+    'France' => 'FR',
+    'United Kingdom' => 'GB',
+    'Sweden' => 'SE',
+    'Germany' => 'DE',
+    'Hungary' => 'HU',
+    'Bulgaria' => 'BG',
+    'Denmark' => 'DK',
+    # 'Jordan' => 'JO',
+    'Finland' => 'FI',
+    # 'Palestine' => 'PS',
+    "Russia" => 'RU',
+    "Ukraine" => 'UA',
+    'Poland' => 'PL',
+    'Italy' => 'IT',
+    'Spain' => 'ES',
+    'Switzerland' => 'CH',
+    'Turkey' => 'TR',
+    'Ireland' => 'IE',
+    'Portugal' => 'PT',
+    'Greece' => 'GR',
+    'Norway' => 'NO',
+    'Latvia' => 'LV',
+    'Lithuania' => 'LT',
+    'Estonia' => 'EE',
+    'Romania' => 'RO',
+    # 'Egypt' => 'EG',
+    'Czech Republic' => 'CZ',
+    'Montenegro' => 'ME',
+    'Macedonia' => 'MK',
+    'Netherlands' => 'NL',
+    'Luxembourg' => 'LU',
+    'Austria' => 'AT',
+    'Slovakia' => 'SK',
+    'Slovenia' => 'SI',
+    'Croatia' => 'HR',
+    'Bosnia and Hertz.' => 'BA',
+    'Serbia' => 'RS',
+    'Belarus' => 'BY',
+    'Albania' => 'AL',
+    'Georgia' => 'GE',
+    'Moldova' => 'MD',
+    'Kosovo' => '_0'}
 
-def assign_countries(countries)
-  if countries.count > 5
-    i = countries.count
-    5.times do |num|
-      index = rand(i)
-      countries[index][:color] = "green"
-      # player.country_input(countries[index])
-      COUNTRIES[:countries] << countries[index]
-      countries.delete(countries[index])
-      i -= 1
-    end
-  else
-    5.times do |num|
-      countries[num][:color] = "red"
-      # player.country_input(countries[num])
-      COUNTRIES[:countries] << countries[num]
+  def intitialize(player1, player2)
+    raise "Two players not present yet" if player1  && player2
+    assign_countries_randomly_to_players(player1, player2) if player1 && player2
+  end
+
+
+
+  def assign_countries
+    players = [player1, player2]
+    COUNTRY_CODE_HASH.keys.each do |country_name|
+      country = Country.new(country_name)
+      players.shuffle.first.country_input(country)
     end
   end
+
 end

@@ -1,36 +1,58 @@
 class Game
 
-  require_relative "./player.rb"
   require_relative "./country.rb"
-  require_relative "./country_code_lookup.rb"
 
+  COUNTRY_CODE_HASH = {
+    'Belgium' => 'BE',
+    'France' => 'FR',
+    'United Kingdom' => 'GB',
+    'Sweden' => 'SE',
+    'Germany' => 'DE',
+    'Hungary' => 'HU',
+    'Bulgaria' => 'BG',
+    'Denmark' => 'DK',
+    # 'Jordan' => 'JO',
+    'Finland' => 'FI',
+    # 'Palestine' => 'PS',
+    "Russia" => 'RU',
+    "Ukraine" => 'UA',
+    'Poland' => 'PL',
+    'Italy' => 'IT',
+    'Spain' => 'ES',
+    'Switzerland' => 'CH',
+    'Turkey' => 'TR',
+    'Ireland' => 'IE',
+    'Portugal' => 'PT',
+    'Greece' => 'GR',
+    'Norway' => 'NO',
+    'Latvia' => 'LV',
+    'Lithuania' => 'LT',
+    'Estonia' => 'EE',
+    'Romania' => 'RO',
+    # 'Egypt' => 'EG',
+    'Czech Republic' => 'CZ',
+    'Montenegro' => 'ME',
+    'Macedonia' => 'MK',
+    'Netherlands' => 'NL',
+    'Luxembourg' => 'LU',
+    'Austria' => 'AT',
+    'Slovakia' => 'SK',
+    'Slovenia' => 'SI',
+    'Croatia' => 'HR',
+    'Bosnia and Hertz.' => 'BA',
+    'Serbia' => 'RS',
+    'Belarus' => 'BY',
+    'Albania' => 'AL',
+    'Georgia' => 'GE',
+    'Moldova' => 'MD',
+    'Kosovo' => '_0'}
 
   attr_accessor :player1, :player2
   attr_writer :turn
 
   def initialize
     player1, player2 = nil, nil
-    setup_game
   end
-
-  def setup_game
-    simon = Player.new
-    simon.name = 'Simon'
-    pavel = Player.new
-    pavel.name = 'Pavel'
-    add_player(simon)
-    add_player(pavel)
-    assign_countries_randomly_to_players
-  end
-
-  def assign_countries_randomly_to_players
-    players = [player1, player2]
-    COUNTRY_CODE_HASH.keys.each do |country_name|
-      country = Country.new(country_name)
-      players.shuffle.first.country_input(country)
-    end
-  end
-
 
   def show_countries
 
@@ -51,6 +73,15 @@ class Game
 
     return {:countries => countries_array}
   end 
+
+
+  def assign_countries
+    players = [player1, player2]
+    COUNTRY_CODE_HASH.keys.each do |country_name|
+      country = Country.new(country_name)
+      players.shuffle.first.country_input(country)
+    end
+  end
 
   def add_player(player)
     self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?

@@ -13,7 +13,11 @@ class Player
   end
 
   def country_input(country)
-    @countries << country
+    if @countries.count < 21
+      @countries << country
+    else
+      @countries
+    end
   end
 
   def remove_country(country)

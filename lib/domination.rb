@@ -1,12 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/json'
+require 'rack-flash'
 require 'json'
 
 require_relative "./game"
 require_relative "./player"
 require_relative "./dice"
 
-require_relative "./setup_game.rb"
 require_relative "./game.rb"
 
 require_relative "./country_code_lookup"
@@ -21,6 +21,9 @@ class Domination < Sinatra::Base
 
   SESSIONS = []
 
+  use Rack::Flash
+
+
   set :public_folder, File.join(root, "..", "public") 
 
   get '/' do
@@ -28,18 +31,25 @@ class Domination < Sinatra::Base
   end
 
   get '/map' do
-    
-    erb :map
+    if SESSIONS.count == 2
+      erb :map
+    else
+      "Wait please"
+    end
   end
 
   post '/player' do
-    redirect to '/' if SESSIONS.count == 2
-    session[:player_id] = 1 if SESSIONS.empty?
-    session[:player_id] = SESSIONS.count + 1 if !SESSIONS.empty?
-    GAME.add_player(Player.new)
-    SESSIONS << session
-    assign_countries(RAW_COUNTRIES)
-    redirect to '/map'
+    if SESSIONS.count == 2
+      flash[:notice] = "Sorry there 2 players already in" 
+      redirect to '/' 
+    else
+      session[:player_id] = 1 if SESSIONS.empty?
+      session[:player_id] = SESSIONS.count + 1 if !SESSIONS.empty?
+      GAME.add_player(Player.new)
+      SESSIONS << session
+      GAME.assign_countries if SESSIONS.count == 2
+      redirect to '/map'
+    end
   end
 
   get '/country_data' do
@@ -50,8 +60,7 @@ class Domination < Sinatra::Base
 
   get '/game_data' do
     content_type :json
-    @my_game = Game.new
-    @my_game.show_countries.to_json
+    GAME.show_countries.to_json
   end
 
   # start the server if ruby file executed directly
