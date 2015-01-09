@@ -13,7 +13,7 @@ class Country
   end
 
   def remove_army
-    raise "Game error: There are no armies on this country" if army_count == 1 
+    raise "Game error: There are no armies on this country" if army_count == 0
     @armies -= 1
   end
 
