@@ -1,6 +1,5 @@
 class Country
 
-
   attr_reader :name, :armies
 
   def initialize(name)
@@ -13,7 +12,7 @@ class Country
   end
 
   def remove_army
-    raise "Game error: There are no armies on this country" if army_count == 0
+    raise "Game error: You are not allowed to remove the last army from this country" if army_count == 1
     @armies -= 1
   end
 

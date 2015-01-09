@@ -1,4 +1,4 @@
-require 'country'
+require 'models/country'
 
 describe 'country' do
   context 'shows on map with armies' do
@@ -26,7 +26,7 @@ describe 'country' do
     end
 
     it 'should never have less then 1 army' do
-      expect{belgium.remove_army}.to raise_error("Game error: There are no armies on this country")
+      expect{belgium.remove_army}.to raise_error("Game error: You are not allowed to remove the last army from this country")
     end   
 
   end
