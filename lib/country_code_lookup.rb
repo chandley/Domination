@@ -7,9 +7,9 @@ COUNTRY_CODE_HASH = {
 'Hungary' => 'HU',
 'Bulgaria' => 'BG',
 'Denmark' => 'DK',
-'Jordan' => 'JO',
+# 'Jordan' => 'JO',
 'Finland' => 'FI',
-'Palestine' => 'PS',
+# 'Palestine' => 'PS',
 "Russia" => 'RU',
 "Ukraine" => 'UA',
 'Poland' => 'PL',
@@ -23,12 +23,27 @@ COUNTRY_CODE_HASH = {
 'Norway' => 'NO',
 'Latvia' => 'LV',
 'Lithuania' => 'LT',
-'Estonia' => 'ES',
+'Estonia' => 'EE',
 'Romania' => 'RO',
-'Egypt' => 'EG',
+# 'Egypt' => 'EG',
 'Czech Republic' => 'CZ',
-'Montenegro' => 'MN',
-'Macedonia' => 'MK'
+'Montenegro' => 'ME',
+'Macedonia' => 'MK',
+'Netherlands' => 'NL',
+'Luxembourg' => 'LU',
+'Austria' => 'AT',
+'Slovakia' => 'SK',
+'Slovenia' => 'SI',
+'Croatia' => 'HR',
+'Bosnia and Hertz.' => 'BA',
+'Serbia' => 'RS',
+'Belarus' => 'BY',
+'Albania' => 'AL',
+'Georgia' => 'GE',
+'Moldova' => 'MD',
+'Kosovo' => '_0'
+
+
 
 }
 
