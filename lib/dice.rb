@@ -9,7 +9,7 @@ RAW_COUNTRIES = [{country: "GB", color: nil},
              {country: "IT", color: nil},
              {country: "CH", color: nil}]
 
-COUNTRIES = { countries: []}
+COUNTRIES_DICE = { countries: []}
 
 def assign_countries(countries)
   if countries.count > 5
@@ -18,7 +18,7 @@ def assign_countries(countries)
       index = rand(i)
       countries[index][:color] = "green"
       # player.country_input(countries[index])
-      COUNTRIES[:countries] << countries[index]
+      COUNTRIES_DICE[:countries] << countries[index]
       countries.delete(countries[index])
       i -= 1
     end
@@ -26,7 +26,7 @@ def assign_countries(countries)
     5.times do |num|
       countries[num][:color] = "red"
       # player.country_input(countries[num])
-      COUNTRIES[:countries] << countries[num]
+      COUNTRIES_DICE[:countries] << countries[num]
     end
   end
 end
