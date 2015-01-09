@@ -5,7 +5,7 @@
   <script type="text/javascript" src="/js/jquery-jvectormap-europe-mill-en.js"></script>
 </head>
 <body>
-  <div id="map" style="width: 100%; height: 100%"></div>
+  <div id="map" style="width: 100%; height: 90%"></div>
   <script>
     $(function(){
       $('#map').vectorMap({
@@ -14,35 +14,33 @@
           el.html(el.html()+' (Armies - '+1+')');
 
         }
-      
-    })
-    
+      })
     });
+    
   </script>
 
+  <div id="form" style="width: 100%; height: 10%">
+    <form action="/attack" method="post">
+      Attacking country: <input type="text" name="attacking country">
+      Defending country: <input type="text" name="defending country">
+      <input type="submit" value="Attack">
+    </form>
+  </div>
 
+  <script>
 
-<!-- $(document).ready(function(){
-  $.get('https://api.github.com/users/tansaku',function(user){
-    var newProfile = Mustache.render($('#profile-template').html(), user);
-    $('.profile-container').append(newProfile);
-  })
-}); -->
-
-<script>
-
-  $(document).ready(function(){
-    $.getJSON('https://domination-all.herokuapp.com/game_data', function(data) {
-      data.countries.forEach(function(state) {
-        $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
-        $('svg path[data-code="' + state.country + '"]').hover(function() {
-          $(this).attr('fill', 'black')}, function() {
-            $(this).attr('fill', state.color)
-          });
+    $(document).ready(function(){
+      $.getJSON('http://localhost:9292/game_data', function(data) {
+        data.countries.forEach(function(state) {
+          $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
+          $('svg path[data-code="' + state.country + '"]').hover(function() {
+            $(this).attr('fill', 'black')}, function() {
+              $(this).attr('fill', state.color)
+            });
+        });
       });
     });
-  });
 
-</script>
+  </script>
 
 </body>

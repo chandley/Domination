@@ -54,6 +54,21 @@ class Domination < Sinatra::Base
     @my_game.show_countries.to_json
   end
 
+  post '/attack' do
+    attacking_country, defending_country = params[:"attack country"], params[:"defending country"]
+    battle_setup_hash = {:attacking_country => attacking_country,
+                         :defending_country => defending_country,
+                         :attacking_player => @my_game.player1,
+                         :defending_player => @my_game.player2
+                        }
+    @my_game.attack(battle_setup_hash)
+    redirect to '/map'
+  end
+
+  # get '/attack' do
+  #   erb :attack_form
+  # end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
