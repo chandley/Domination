@@ -11,7 +11,24 @@ COUNTRY_CODE_HASH = {
 'Finland' => 'FI',
 'Palestine' => 'PS',
 "Russia" => 'RU',
-"Ukraine" => 'UA'
+"Ukraine" => 'UA',
+'Poland' => 'PL',
+'Italy' => 'IT',
+'Spain' => 'ES',
+'Switzerland' => 'CH',
+'Turkey' => 'TR',
+'Ireland' => 'IE',
+'Portugal' => 'PT',
+'Greece' => 'GR',
+'Norway' => 'NO',
+'Latvia' => 'LV',
+'Lithuania' => 'LT',
+'Estonia' => 'ES',
+'Romania' => 'RO',
+'Egypt' => 'EG',
+'Czech Republic' => 'CZ',
+'Montenegro' => 'MN',
+'Macedonia' => 'MK'
 
 }
 
