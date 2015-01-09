@@ -1,4 +1,4 @@
-require "player"
+require "models/player"
 
 describe Player do
 
@@ -31,16 +31,16 @@ describe Player do
       expect(player.countries).to eq [england, france, belgium]
     end
 
-    it "should have total number of armies equal to 2 times the number of countires they have" do
+    xit "should have total number of armies equal to 2 times the number of countires they have" do
       expect(player.start_number_of_armies).to eq 6
     end
 
-    it "should remove an army from Player" do
+    xit "should remove an army from Player" do
       player.start_number_of_armies
       expect(player.delete_army).to eq 5
     end
 
-    it "should start new round with new armies" do
+    xit "should start new round with new armies" do
       expect(player.new_round).to eq 3
     end
   end
