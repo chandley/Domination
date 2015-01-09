@@ -32,11 +32,11 @@ describe Player do
     end
 
     it "should have total number of armies equal to 2 times the number of countires they have" do
-      expect(player.army_count).to eq 6
+      expect(player.start_number_of_armies).to eq 6
     end
 
     it "should remove an army from Player" do
-      player.army_count
+      player.start_number_of_armies
       expect(player.delete_army).to eq 5
     end
 
