@@ -1,5 +1,11 @@
  <head>
   <link rel="stylesheet" href="/css/jquery-jvectormap-2.0.1.css" type="text/css" media="screen"/>
+  <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/index.css" rel="stylesheet">
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script type="text/javascript" src="/js/jquery-jvectormap-2.0.1.min.js"></script>
   <script type="text/javascript" src="/js/jquery-jvectormap-europe-mill-en.js"></script>
@@ -8,15 +14,28 @@
   <div id="map" style="width: 100%; height: 90%"></div>
   
   <script src="/js/setMap.js"></script>
-
-  <div id="form" style="width: 100%; height: 10%">
-    <form action="/attack" method="post">
-      Attacking country: <input type="text" name="attacking country">
-      Defending country: <input type="text" name="defending country">
-      <input type="submit" value="Attack">
+  
+  <div id="form" style="width: 100%; height: 10%; padding-top: 2%;">
+    <form action="/attack" method="post" class="form-inline">
+      <input type="text" name="attacking country" class="form-control" placeholder="Attacking country:">
+      <input type="text" name="defending country" placeholder="Defending country:" class="form-control">
+      <input type="submit" value="Attack" class="btn btn-default">
     </form>
   </div>
+  
 
+  <<!-- form action="/attack" method="post" class="form-inline">
+  <div class="form-group"> 
+    <label class="sr-only" for="exampleInputEmail2">Attacking country:</label>
+    <input type="text" name= "attacking country" class="form-control" id="attacking country" placeholder="Attacking country:">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Defending country:</label>
+    <input type="text" name="defending country" class="form-control" id="defending country" placeholder="Defending country:">
+  </div>
+  <button type="submit" class="btn btn-default">Attack</button>
+</form>
+-->
   <script src="/js/ajaxRequest.js"></script>
 
 </body>
