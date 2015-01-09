@@ -6,17 +6,8 @@
 </head>
 <body>
   <div id="map" style="width: 100%; height: 90%"></div>
-  <script>
-    $(function(){
-      $('#map').vectorMap({
-        map: 'europe_mill_en',
-        onRegionTipShow: function(e, el, code){
-          el.html(el.html()+' (Armies - '+1+')');
-        }
-      })
-    });
-    
-  </script>
+  
+  <script src="/js/setMap.js"></script>
 
   <div id="form" style="width: 100%; height: 10%">
     <form action="/attack" method="post">
@@ -26,20 +17,6 @@
     </form>
   </div>
 
-  <script>
-
-    $(document).ready(function(){
-      $.getJSON('http://localhost:9292/game_data', function(data) {
-        data.countries.forEach(function(state) {
-          $('svg path[data-code="' + state.country + '"]').attr('fill', state.color)
-          $('svg path[data-code="' + state.country + '"]').hover(function() {
-            $(this).attr('fill', 'black')}, function() {
-              $(this).attr('fill', state.color)
-            });
-        });
-      });
-    });
-
-  </script>
+  <script src="/js/ajaxRequest.js"></script>
 
 </body>
