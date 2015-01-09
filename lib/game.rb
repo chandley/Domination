@@ -20,17 +20,17 @@ class Game
     pavel.name = 'Pavel'
     add_player(simon)
     add_player(pavel)
-    uk = Country.new('United Kingdom')
-    player1.country_input(uk)
-    sweden = Country.new('Sweden')
-    player2.country_input(sweden)
-    russia = Country.new('Russia')
-    player2.country_input(russia)
-    finland = Country.new('Finland')
-    player1.country_input(finland)
-    hungary = Country.new('Hungary')
-    player1.country_input(hungary)
+    assign_countries_randomly_to_players
   end
+
+  def assign_countries_randomly_to_players
+    players = [player1, player2]
+    COUNTRY_CODE_HASH.keys.each do |country_name|
+      country = Country.new(country_name)
+      players.shuffle.first.country_input(country)
+    end
+  end
+
 
   def show_countries
 
