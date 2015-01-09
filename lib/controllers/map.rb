@@ -4,7 +4,7 @@ class Domination < Sinatra::Base
     if SESSIONS.count == 2
       erb :map
     else
-      "Wait please"
+      erb :wait
     end
   end
 
