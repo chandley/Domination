@@ -9,7 +9,6 @@ class Player
   def initialize
     @unassigned_armies 
     @countries = []
-    # country.each { |country| @countries << country }
   end
 
   def country_input(country)

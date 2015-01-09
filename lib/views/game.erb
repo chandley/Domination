@@ -41,7 +41,9 @@
             <h1 class="cover-heading">Domination</h1>
             <p class="lead">Conquer the World</p>
             <p class="lead">
-              <a href="/map" class="btn btn-lg btn-default">Start game</a>
+              <form action = "/new_game" method = "post">
+                <input type="submit" class="btn btn-lg btn-default" value="start game">
+              </form>
             </p>
           </div>
 
@@ -68,28 +70,3 @@
   </body>
 </html>
 
-
-<!-- 
-<html>
-
-<body>
-
-  <button type="button">Start game</button>
-
-
-
-  <% game = MockGame.new %>
-  player1
-  <% game.player1.countries.each do |country| %>
-    <%= country.name %>
-    <%= country.armies %>
-  <% end %>
-  player2
-  <% game.player2.countries.each do |country| %>
-    <%= country.name %>
-    <%= country.armies %>
-  <% end %>
-
-</body>
-
-</html> -->
