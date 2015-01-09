@@ -12,8 +12,6 @@ Strategy based game around conquering countries for week 9 makeathon at Makers A
 ##Classes
 1. Countries
 2. Player
-3. Dice
-4. Army
 5. Game
 
 ###Countries
@@ -29,16 +27,6 @@ Strategy based game around conquering countries for week 9 makeathon at Makers A
 - Can instruct armies to invade countries
 - Can finish turn
 - Getes extra armies, one for each army they control
-
-###Dice
-- Randomly selects number between 1 and 6
-- One dice per army
-
-###Army
-- Can beat another army
-- Can lose to another army
-- Only invade country when more then 1 army in the country
-- Belongs to a player
 
 ###Game
 - Winning army scores higher number on dice role
