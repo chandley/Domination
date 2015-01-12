@@ -45,8 +45,14 @@ The individual countries were set up as paths within a SVG container so couldn't
 
 ### To do
 
+* Add code samples
+* run test
+* svg updates
+* image of map
+
 The game is not currently fully implemented, but we do have a demonstration of attack with update of the svg map
 
+* convert country code lookup file to yaml - data folder
 * Allow proper game turns with sessions
 * Allocate extra armies to players at beginning of game and turn
 * Update attack method to give more sophisticated battles
