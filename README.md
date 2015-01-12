@@ -34,7 +34,7 @@ Two player game with a map. Player should control countries with armies, be able
 | Languages | Technologies  | Testing Frameworks| Misc
 | :-------------------------------------------- |:--------------|:-----------|:----|
 | Ruby      | svg           | Rspec             | Trello  |
-| Javascript| Sinatra       | Cucumber          | 
+| Javascript| Sinatra       |           | 
 | CSS       | Ajax/API      |
 
 ### Solution
