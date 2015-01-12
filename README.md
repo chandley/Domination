@@ -59,4 +59,5 @@ Communicate what you are working on out of hours, to avoid duplication (use Hipc
 Next time show full user stories in trello titles
 Important to shut down discussion after 20 minutes and make a decision, even if by tossing a coin
 We wasted some time from not coordinating morning start times.
+Best to exclude java libraries from codeclimate score
 
