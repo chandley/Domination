@@ -1,4 +1,5 @@
 require 'models/country'
+require 'spec_helper'
 
 describe 'country' do
   context 'shows on map with armies' do

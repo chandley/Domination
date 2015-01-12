@@ -1,4 +1,5 @@
 require "models/player"
+require 'spec_helper'
 
 describe Player do
 

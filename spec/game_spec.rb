@@ -1,4 +1,5 @@
 require 'models/game.rb'
+require 'spec_helper'
 
 describe Game do
 

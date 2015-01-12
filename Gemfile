@@ -5,6 +5,7 @@ gem 'rack-flash3'
 gem 'sinatra-contrib'
 
 group :development, :test do
+  gem "codeclimate-test-reporter", require: nil
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'
